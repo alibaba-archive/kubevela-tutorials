@@ -15,6 +15,6 @@ spec:
       traits:
         - type: ingress
           properties:
-            domain: localhost 
+            domain: abc.com
             http:
               /: 8080
