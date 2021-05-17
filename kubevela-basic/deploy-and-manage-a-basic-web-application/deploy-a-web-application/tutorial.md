@@ -21,7 +21,7 @@ spec:
 
 部署应用：
 
-```shell script
+```shell
 $ kubectl apply -f app.yaml
 ```
 

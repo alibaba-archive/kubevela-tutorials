@@ -13,22 +13,22 @@ TBD
 # 安装 KubeVela
 
 1. 为 KubeVela 添加 helm chart repo
-    ```shell script
+    ```shell
     helm repo add kubevela https://kubevelacharts.oss-accelerate.aliyuncs.com/core
     ```
 
 2. 更新 chart repo
-    ```shell script
+    ```shell
     helm repo update
     ```
 
 3. 安装 KubeVela
-    ```shell script
+    ```shell
     helm install --create-namespace -n vela-system kubevela kubevela/vela-core
     ```
 
 4. 验证是否安装成功
-    ```shell script
+    ```shell
     helm test kubevela -n vela-system
     ```
 
