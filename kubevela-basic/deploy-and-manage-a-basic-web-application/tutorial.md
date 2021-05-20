@@ -10,9 +10,11 @@
 
 另一方面，对于平台团队来讲，KubeVela 是一个强大并且高可扩展的云原生应用平台核心引擎。基于这样一个引擎，平台团队可以快速、高效地以 Kubernetes 原生的方式在 KubeVela 中植入任何来自云原生社区的应用管理能力，从而基于 KubeVela 打造出自己需要的云原生平台，比如：云原生数据库 PaaS、云原生 AI 平台、甚至 Serverless 服务。在这一点上，KubeVela 可以被认为是**一个“以应用为中心”的 Kubernetes 发行版**，以 OAM 为核心，让平台团队可以基于 KubeVela 快速打造出属于自己的 PaaS、Serverless 乃至任何面向用户的云原生平台项目。
 
-### 安装 Kubernetes
+### 连接阿里云 Kubernetes
 
-TBD
+连接阿里云容器服务 Kubernetes。
+
+![](./ack.jpg)
 
 ### 安装 KubeVela
 
