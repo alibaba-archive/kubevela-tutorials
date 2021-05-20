@@ -1,3 +1,9 @@
 {
-  "scenario_root": "kubevela-basic"
+  "scenario_root": "kubevela-basic",
+  "directory": [
+    {
+      "folderName": "deploy-and-manage-a-basic-web-application",
+      "title": "部署和管理一个 web 应用"
+    }
+  ]
 }
