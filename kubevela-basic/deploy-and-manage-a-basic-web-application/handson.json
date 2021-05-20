@@ -1,0 +1,20 @@
+{
+  "directory": [
+    {
+      "folderName": "installation",
+      "title": "KubeVela 安装"
+    },
+    {
+      "folderName": "deploy-a-web-application",
+      "title": "部署一个 web 应用"
+    },
+    {
+      "folderName": "visit-the-web-application",
+      "title": "访问该应用"
+    },
+    {
+      "folderName": "scale-the-application",
+      "title": "扩容该应用"
+    }
+  ]
+}
