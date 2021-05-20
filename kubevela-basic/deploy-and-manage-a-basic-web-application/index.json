@@ -1,0 +1,11 @@
+{
+  "difficulty": 2,
+  "duration": 10,
+  "importFiles": [
+    {
+      "targetFile": ".kube/config",
+      "url": "file:https://start.aliyun.com/api/handson/ack/kubeconfig"
+    }
+  ],
+  "layout": "editor+terminal"
+}
