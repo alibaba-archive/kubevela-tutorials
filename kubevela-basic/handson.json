@@ -1,5 +1,5 @@
 {
-  "scenario_root": "kubevela-basic",
+  "scenario_root": "deploy-and-manage-a-basic-web-application",
   "directory": [
     {
       "folderName": "installation",
