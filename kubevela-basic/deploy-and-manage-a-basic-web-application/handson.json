@@ -1,4 +1,5 @@
 {
+  "scenario_root": "kubevela-basic",
   "directory": [
     {
       "folderName": "installation",
