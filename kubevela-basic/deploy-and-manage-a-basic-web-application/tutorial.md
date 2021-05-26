@@ -2,43 +2,37 @@
 
 ## 安装 KubeVela
 
-### 什么是 KubeVela ？
+### 确认 Kubernetes 已安装
 
-一言以蔽之，**KubeVela 是一个简单易用且高度可扩展的应用管理平台与核心引擎**。KubeVela 是基于 Kubernetes 与 OAM 技术构建的。
+你打开实验后，后台会默认会你装好 Kubernetes 集群，请通过一下命令检查 Kubernetes 集群已可用。
 
-详细的说，对于应用开发人员来讲，KubeVela 是一个非常低心智负担的云原生应用管理平台，核心功能是让开发人员方便快捷地在 Kubernetes 上定义与交付现代微服务应用，无需了解任何 Kubernetes 本身相关的细节。在这一点上，KubeVela 可以被认为是**云原生社区的 Heroku**。
-
-另一方面，对于平台团队来讲，KubeVela 是一个强大并且高可扩展的云原生应用平台核心引擎。基于这样一个引擎，平台团队可以快速、高效地以 Kubernetes 原生的方式在 KubeVela 中植入任何来自云原生社区的应用管理能力，从而基于 KubeVela 打造出自己需要的云原生平台，比如：云原生数据库 PaaS、云原生 AI 平台、甚至 Serverless 服务。在这一点上，KubeVela 可以被认为是**一个“以应用为中心”的 Kubernetes 发行版**，以 OAM 为核心，让平台团队可以基于 KubeVela 快速打造出属于自己的 PaaS、Serverless 乃至任何面向用户的云原生平台项目。
-
-### 连接阿里云 Kubernetes
-
-连接阿里云容器服务 Kubernetes。
-
-![](./ack.jpg)
+```bash
+$ kubectl version
+```
 
 ### 安装 KubeVela
 
 1. 为 KubeVela 添加 helm chart repo
-    ```shell
+    ```bash
     helm repo add kubevela https://kubevelacharts.oss-accelerate.aliyuncs.com/core
     ```
 
 2. 更新 chart repo
-    ```shell
+    ```bash
     helm repo update
     ```
 
 3. 安装 KubeVela
-    ```shell
+    ```bash
     helm install --create-namespace -n vela-system kubevela kubevela/vela-core
     ```
 
 4. 验证是否安装成功
-    ```shell
+    ```bash
     helm test kubevela -n vela-system
     ```
 
-    ```shell
+    ```bash
     Pod kubevela-application-test pending
     Pod kubevela-application-test pending
     Pod kubevela-application-test running
@@ -84,13 +78,13 @@ spec:
 
 部署应用：
 
-```shell
+```bash
 $ kubectl apply -f app.yaml
 ```
 
 检查应用部署情况：
 
-```shell
+```bash
 $ kubectl describe application first-app
 Name:         first-app
 Namespace:    default
@@ -134,7 +128,7 @@ Events:
 
 应用部署成功，并且 `Deployment` `helloworld` 也生成了。
 
-```shell
+```bash
 $ kubectl get deployment
 NAME         READY   UP-TO-DATE   AVAILABLE   AGE
 helloworld   1/1     1            1           3m22s
@@ -169,7 +163,7 @@ spec:
 
 提交应用：
 
-```shell
+```bash
 $ kubectl apply -f app-v1.yaml
 application.core.oam.dev/first-app configured
 
@@ -210,13 +204,13 @@ Events:
 
 在本地设置 hosts：
 
-```shell
+```bash
 $ cat /etc/hosts
 47.243.62.107 abc.com
 ```
 
 访问应用：
-```shell
+```bash
 $ curl abc.com
 Hello KubeVela!
 ```
@@ -248,7 +242,7 @@ spec:
 
 提交应用：
 
-```shell
+```bash
 $ kubectl apply -f app-v2.yaml
 application.core.oam.dev/first-app configured
 
@@ -299,7 +293,7 @@ Events:
 ```
 
 观察 workload Deployment，副本数量为 4：
-```shell
+```bash
 $ kubectl get deployment
 NAME         READY   UP-TO-DATE   AVAILABLE   AGE
 helloworld   4/4     4            4           2d22h
