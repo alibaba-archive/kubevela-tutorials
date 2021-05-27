@@ -7,7 +7,7 @@
 你打开实验后，后台会默认会你装好 Kubernetes 集群，请通过一下命令检查 Kubernetes 集群已可用。
 
 ```bash
-$ kubectl version
+kubectl version
 ```
 
 ### 安装 KubeVela
@@ -32,7 +32,7 @@ $ kubectl version
     helm test kubevela -n vela-system
     ```
 
-    ```bash
+    ```shell
     Pod kubevela-application-test pending
     Pod kubevela-application-test pending
     Pod kubevela-application-test running
@@ -79,13 +79,16 @@ spec:
 部署应用：
 
 ```bash
-$ kubectl apply -f app.yaml
+kubectl apply -f app.yaml
 ```
 
 检查应用部署情况：
 
 ```bash
-$ kubectl describe application first-app
+kubectl describe application first-app
+```
+
+```shell
 Name:         first-app
 Namespace:    default
 Labels:       <none>
@@ -129,7 +132,7 @@ Events:
 应用部署成功，并且 `Deployment` `helloworld` 也生成了。
 
 ```bash
-$ kubectl get deployment
+kubectl get deployment
 NAME         READY   UP-TO-DATE   AVAILABLE   AGE
 helloworld   1/1     1            1           3m22s
 ```
@@ -166,9 +169,10 @@ spec:
 ```bash
 $ kubectl apply -f app-v1.yaml
 application.core.oam.dev/first-app configured
+```
 
-
-$ kubectl describe application first-app
+```shell
+kubectl describe application first-app
 Name:         first-app
 Namespace:    default
 Labels:       <none>
@@ -205,13 +209,19 @@ Events:
 在本地设置 hosts：
 
 ```bash
-$ cat /etc/hosts
+cat /etc/hosts
+```
+
+```shell
 47.243.62.107 abc.com
 ```
 
 访问应用：
 ```bash
-$ curl abc.com
+curl abc.com
+```
+
+```shell
 Hello KubeVela!
 ```
 
@@ -244,10 +254,17 @@ spec:
 
 ```bash
 $ kubectl apply -f app-v2.yaml
+```
+
+```shell
 application.core.oam.dev/first-app configured
+````
 
-
+```bash
 $ kubectl describe application first-app
+```
+
+```shell
 Name:         first-app
 Namespace:    default
 Labels:       <none>
@@ -295,6 +312,9 @@ Events:
 观察 workload Deployment，副本数量为 4：
 ```bash
 $ kubectl get deployment
+```
+
+```shell
 NAME         READY   UP-TO-DATE   AVAILABLE   AGE
 helloworld   4/4     4            4           2d22h
 ```
