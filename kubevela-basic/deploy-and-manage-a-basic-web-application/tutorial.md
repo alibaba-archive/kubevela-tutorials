@@ -4,7 +4,7 @@
 
 ### 确认 Kubernetes 已安装
 
-你打开实验后，后台会默认会你装好 Kubernetes 集群，请通过一下命令检查 Kubernetes 集群已可用。
+你打开本实验后，会默认安装 Kubernetes 集群，预计需要两分钟。请通过以下命令检查 Kubernetes 集群已可用。
 
 ```bash
 kubectl version
@@ -53,7 +53,6 @@ kubectl version
     NOTES:
     Welcome to use the KubeVela! Enjoy your shipping application journey!
     ```
-
 
 ## 部署应用
 
@@ -139,6 +138,7 @@ helloworld   1/1     1            1           3m22s
 
 ## 给应用添加 Ingress trait
 
+Trait 是可以操作 Component 的对应，比如扩容、访问、添加 annotation 等。
 `Ingress` trait 可以给指定应用的域名、访问路径和端口，如下 `app-v1.yaml`：
 
 ```yaml
@@ -321,4 +321,18 @@ helloworld   4/4     4            4           2d22h
 
 ## 恭喜完成教程
 
-Congratulations!
+恭喜你完成本实验!
+
+通过实验，我们可以发现，通过传入 3 个参数（image, env 和 port），创建基于 webservice 的 workload；通过 Trait Ingress，传入
+两个参数（domain 和 http），就可以通过域名访问应用；通过 Trait scaler，指定参数 replicas 就可以扩容相应的副本数。Workload 可以很方便地创建，
+通过给 workload 指定 trait，可以非常方便执行访问、扩容应用等操作。
+
+## 扩展学习
+
+访问 [KubeVela 官网](https://kubevela.io) 了解 KubeVela 更多能力。
+
+加入钉钉群，参与讨论和得到快速技术支持。
+
+![](https://img.alicdn.com/imgextra/i1/O1CN01bikYSJ29tl6vTQRl1_!!6000000008126-2-tps-439-564.png)
+
+也欢迎给 [KubeVela 开源项目](https://github.com/oam-dev/kubevela) 提意见和建议，并参与开发。
